@@ -49,6 +49,8 @@ class Controller {
     static products = async (req, res) => {
         const allproducts = await Product__Model.find().sort({ date: 'desc' })
         res.send(allproducts)
+        console.log(allproducts)
+
     }
 
     // search funtionality
