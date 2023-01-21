@@ -13,7 +13,7 @@ import bodyParser from "body-parser";
 
 const app = express()
 const PORT = process.env.port || '5000'
-const DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://dipubhandari:.ComDipu@cluster0.va8aa0b.mongodb.net/test" || "mongodb://localhost:27017"
+const DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://dipubhandari:.ComDipu@cluster0.va8aa0b.mongodb.net/test"
 
 app.use(express.json())
 const connection = dbcon(DATABASE_URL)
@@ -32,13 +32,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(process.cwd(), "./build/index.html"))
 })
 
-app.get('/panicky-earmuffs-bass.cyclic.app', (req, res) => {
-    res.sendFile(path.join(process.cwd(), "./build/index.html"))
-})
-
 app.use('/', router)
-if (connection) {
 
+if (connection) {
+    console.log('hy')
     // listen to the port
     app.listen(PORT, () => {
     })
